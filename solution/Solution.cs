@@ -6,12 +6,19 @@
 //[“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 //[“Russia”, “Denmark”, “Kazan”] → []
 
-string[] array = {"This", "is", "your", "first", "final", "project"};
+string[] array = GetArray();
 int n = 3;
 string[] result = RetutnNewArrayLessThanN(array, n);
 Console.WriteLine($"[{string.Join(", ", array)}] -> [{string.Join(", ", result)}]");
 
-//Для начала сосчитаем, какая длина будет у искомого массива
+//Запрос ввода строки у пользователя для создания исходного массива
+string[] GetArray()
+{
+    Console.Write("Введите значения через пробел: ");
+    return Console.ReadLine()!.Split(" ");
+}
+
+//Сосчитаем, какая длина будет у искомого массива
 int FindLenght(string[] input, int n)
 {
     int count = 0;
@@ -41,7 +48,3 @@ string[] RetutnNewArrayLessThanN(string[] input, int n)
 }
 
 
-//string[] AskArray() {
-//Write("Введите значения через пробел: ");
-//return ReadLine().Split(" ");
-//}
